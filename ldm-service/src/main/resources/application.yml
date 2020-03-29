@@ -1,0 +1,12 @@
+server:
+  port: 8098
+
+dubbo:
+  application:
+    name: ldm_server
+  registry:
+    address: zookeeper://localhost:2181
+  protocol:
+    name: dubbo
+    port: 7098
+  scan: com.raindrop.service.Manager

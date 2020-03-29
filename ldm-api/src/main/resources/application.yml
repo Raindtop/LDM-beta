@@ -1,0 +1,8 @@
+server:
+  port: 8089
+dubbo:
+  application:
+    name: ldm_api
+  registry:
+    address: zookeeper://localhost:2181
+  scan: com.raindrop.api.Controller
