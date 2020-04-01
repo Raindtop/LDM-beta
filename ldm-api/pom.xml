@@ -23,7 +23,7 @@
         </dependency>
         <dependency>
             <groupId>com.raindrop</groupId>
-            <artifactId>ldm-core</artifactId>
+            <artifactId>ldm-security</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

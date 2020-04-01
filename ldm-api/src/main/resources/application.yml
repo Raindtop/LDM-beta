@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 9026
 dubbo:
   application:
     name: ldm_api

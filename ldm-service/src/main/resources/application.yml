@@ -1,5 +1,5 @@
 server:
-  port: 8098
+  port: 9027
 
 dubbo:
   application:
@@ -8,5 +8,18 @@ dubbo:
     address: zookeeper://localhost:2181
   protocol:
     name: dubbo
-    port: 7098
+    port: 9028
   scan: com.raindrop.service.Manager
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ldm?charset=utf8mb4&useSSL=false&serverTimezone=GMT
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:/mapper/*.xml

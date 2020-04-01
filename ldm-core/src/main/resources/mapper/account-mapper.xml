@@ -1,0 +1,50 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.raindrop.core.Mapper.Account.AccountMapper">
+    <resultMap id="AccountResultMap" type="com.raindrop.common.Model.Account.Account">
+        <id property="accountId" column="account_id"/>
+        <result property="name" column="name"/>
+        <result property="mobile" column="mobile"/>
+        <result property="email" column="email"/>
+        <result property="headImg" column="head_img"/>
+        <result property="roleId" column="role_id"/>
+        <result property="depId" column="dep_id"/>
+        <result property="lastLoginIp" column="last_login_ip"/>
+        <result property="lastLoginTime" column="last_login_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+    <update id="update" parameterType="com.raindrop.common.Model.Account.Account">
+        update account set
+        <if test="account.name != null and account.name != ''">
+            name = #{account.name},
+        </if>
+        <if test="account.headImg != null and account.headImg != ''">
+            head_img = #{account.headImg},
+        </if>
+        <if test="account.roleId != null">
+            role_id = #{account.roleId},
+        </if>
+        <if test="account.depId != null">
+            dep_id = #{account.depId},
+        </if>
+        update_time=now()
+        where account_id=#{account.accountId}
+    </update>
+
+    <select id="find" parameterType="java.util.Map" resultMap="AccountResultMap">
+        select * from account where 1=1
+        <if test="mobile != null and mobile != ''">
+            and mobile = #{mobile}
+        </if>
+        <if test="email != null and email != ''">
+            and email = #{email}
+        </if>
+        <if test="name != null and name != ''">
+            and name like concat('%', #{name}, '%')
+        </if>
+        order by create_time
+    </select>
+</mapper>
