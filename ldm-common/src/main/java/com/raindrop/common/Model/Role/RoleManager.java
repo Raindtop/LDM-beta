@@ -5,5 +5,5 @@ package com.raindrop.common.Model.Role;
  * @Author zhang hesong
  * @Date 13:08 2020/4/1
  **/
-public class RoleManager {
+public interface RoleManager {
 }

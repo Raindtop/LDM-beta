@@ -6,3 +6,9 @@ dubbo:
   registry:
     address: zookeeper://localhost:2181
   scan: com.raindrop.api.Controller
+
+spring:
+  security:
+    user:
+      name: admin
+      password: 123456
