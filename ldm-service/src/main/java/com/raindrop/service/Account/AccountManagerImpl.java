@@ -5,5 +5,5 @@ import com.raindrop.common.Model.Account.AccountManager;
 
 @Service
 public class AccountManagerImpl implements AccountManager {
-    
+
 }

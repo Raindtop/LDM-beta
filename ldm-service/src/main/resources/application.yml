@@ -9,7 +9,7 @@ dubbo:
   protocol:
     name: dubbo
     port: 9028
-  scan: com.raindrop.service.Manager
+  scan: com.raindrop.service
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

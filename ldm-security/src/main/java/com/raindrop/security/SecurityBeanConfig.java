@@ -1,9 +1,12 @@
 package com.raindrop.security;
 
 import com.raindrop.security.UserDetails.UserDetailsServiceImpl;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.access.PermissionEvaluator;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,5 +28,17 @@ public class SecurityBeanConfig {
     @ConditionalOnMissingBean(UserDetailsService.class)
     public UserDetailsService userDetailsService(){
         return new UserDetailsServiceImpl();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(WebSecurityConfigurerAdapter.class)
+    public WebSecurityConfigurerAdapter webSecurityConfigurerAdapter(){
+        return new MyWebSecurityConfigurerAdapter();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(PermissionEvaluator.class)
+    public PermissionEvaluator permissionEvaluator(){
+        return new MyDenyAllPermissionEvaluator();
     }
 }
