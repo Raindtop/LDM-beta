@@ -1,13 +1,10 @@
 package com.raindrop.common.Utils;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import io.netty.util.internal.StringUtil;
 import org.apache.http.HttpHost;
 import org.apache.lucene.search.TotalHits;
 import org.elasticsearch.ElasticsearchException;
-import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.DocWriteResponse;
 import org.elasticsearch.action.admin.indices.alias.Alias;
 import org.elasticsearch.action.delete.DeleteRequest;

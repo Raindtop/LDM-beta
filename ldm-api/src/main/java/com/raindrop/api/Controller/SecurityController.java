@@ -19,9 +19,7 @@ public class SecurityController {
 
     @GetMapping("1")
     @PreAuthorize("hasPermission('ROLE_test','123123')")
-    public void SayHello(@AuthenticationPrincipal Account account){
-        System.out.println(accountManager);
-        System.out.println(account);
-        System.out.println("hello");
+    public String SayHello(@AuthenticationPrincipal Account account){
+        return "hello";
     }
 }
