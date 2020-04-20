@@ -1,6 +1,7 @@
 package com.raindrop.security;
 
 import jdk.nashorn.internal.ir.annotations.Reference;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
+@Log
 public class MyWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
@@ -20,7 +22,7 @@ public class MyWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        System.out.println("2222");
+        log.info("configure");
         http.httpBasic()
                 .and()
                 .authorizeRequests()
@@ -30,7 +32,7 @@ public class MyWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        System.out.println("111");
+        log.info("configureAuthenticationManagerBuilder");
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 }

@@ -13,6 +13,7 @@ public class CurrentAccount extends Account implements UserDetails {
 
     public CurrentAccount(Account account){
         this.setAccountId(account.getAccountId());
+        this.setPassword(account.getPassword());
         this.setName(account.getName());
         this.setMobile(account.getMobile());
         this.setEmail(account.getEmail());
@@ -27,28 +28,23 @@ public class CurrentAccount extends Account implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return this.getPassword();
-    }
-
-    @Override
     public String getUsername() {
-        return this.getUsername();
+        return this.getName();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override

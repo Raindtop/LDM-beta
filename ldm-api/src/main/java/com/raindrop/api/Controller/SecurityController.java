@@ -14,12 +14,12 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping("test")
 public class SecurityController {
-    @Reference
+    @Reference(version = "1.0.0")
     private AccountManager accountManager;
 
     @GetMapping("1")
     @PreAuthorize("hasPermission('ROLE_test','123123')")
-    public String SayHello(@AuthenticationPrincipal Account account){
+    public String SayHello(){
         return "hello";
     }
 }
