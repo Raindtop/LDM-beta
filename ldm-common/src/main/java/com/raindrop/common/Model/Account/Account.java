@@ -35,7 +35,7 @@ public class Account implements Serializable {
      */
     private String email;
     /**
-     * 邮箱
+     * 密码
      */
     private String password;
     /**

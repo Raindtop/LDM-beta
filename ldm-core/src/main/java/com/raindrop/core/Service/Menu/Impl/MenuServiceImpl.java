@@ -1,6 +1,6 @@
-package com.raindrop.core.service.Menu.Impl;
+package com.raindrop.core.Service.Menu.Impl;
 
-import com.raindrop.core.service.Menu.MenuService;
+import com.raindrop.core.Service.Menu.MenuService;
 import org.springframework.stereotype.Service;
 
 @Service

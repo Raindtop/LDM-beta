@@ -8,7 +8,9 @@
         <!-- 打印查询语句 -->
         <setting name="logImpl" value="STDOUT_LOGGING" />
     </settings>
+<!--    开启别名扫描-->
     <typeAliases>
+        <package name="com.raindrop.common.Model"/>
     </typeAliases>
 
 </configuration>
