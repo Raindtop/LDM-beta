@@ -1,5 +1,7 @@
 package com.raindrop.security;
 
+import com.raindrop.common.Model.Role.RoleManager;
+import jdk.nashorn.internal.ir.annotations.Reference;
 import lombok.extern.java.Log;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.PermissionEvaluator;
@@ -11,10 +13,12 @@ import java.util.logging.Level;
 @Configuration
 @Log
 public class MyPermissionEvaluator implements PermissionEvaluator {
+    @Reference
+    private RoleManager roleManager;
 
     @Override
     public boolean hasPermission(Authentication authentication, Object target, Object permission) {
-        log.info("hasPermission");
+
         return true;
     }
 
