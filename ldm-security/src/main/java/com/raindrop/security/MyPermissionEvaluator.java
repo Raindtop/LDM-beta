@@ -18,13 +18,13 @@ public class MyPermissionEvaluator implements PermissionEvaluator {
 
     @Override
     public boolean hasPermission(Authentication authentication, Object target, Object permission) {
-
+        log.info("hasPermission1");
         return true;
     }
 
     @Override
     public boolean hasPermission(Authentication authentication, Serializable targetId, String targetType, Object permission) {
         log.info("hasPermission2");
-        return false;
+        return true;
     }
 }

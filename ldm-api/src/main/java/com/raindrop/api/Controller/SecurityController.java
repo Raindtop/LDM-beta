@@ -18,4 +18,10 @@ public class SecurityController {
     public String SayHello(){
         return "hello";
     }
+
+    @GetMapping("2")
+    @PreAuthorize("hasPermission('ROLE_test','123123')")
+    public String SyaException() throws Exception {
+        throw new Exception("异常出现了！");
+    }
 }
