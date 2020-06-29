@@ -5,26 +5,34 @@
     <parent>
         <groupId>com.raindrop</groupId>
         <artifactId>LDM</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>1.0.0</version>
     </parent>
     <groupId>com.raindrop</groupId>
     <artifactId>ldm-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>ldm-api</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+    <description>API module</description>
     <dependencies>
         <dependency>
             <groupId>com.raindrop</groupId>
             <artifactId>ldm-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.raindrop</groupId>
             <artifactId>ldm-security</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!--  生产可执行的jar包-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

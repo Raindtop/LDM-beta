@@ -4,7 +4,7 @@ dubbo:
   application:
     name: ldm_api
   registry:
-    address: zookeeper://localhost:2181
+    address: zookeeper://120.26.187.19:2181
   scan: com.raindrop.api.Controller
 
 spring:
